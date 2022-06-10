@@ -1,0 +1,19 @@
+<%-include("partials/head"); %>
+<div class="container d-flex justify-content-center">
+    <form class="form" action="/productos" method="POST">
+        <div class="title">Añade un producto</div>
+        <div class="input-container ic1">
+            <input id="title" class="input" type="text" name="name" placeholder="nombre" />
+        </div>
+        <div class="input-container ic2">
+            <input id="price" class="input" type="text" name="price" placeholder="precio" />
+        </div>
+        <div class="input-container ic2">
+            <input id="email" class="input" type="text" placeholder=" imagen" name="pictureUrl" />
+        </div>
+        <button type="submit" class="submit">Guardar</button>
+        <button type="button" class="submit btn btn-outline-primary"> <a class="text-white text-decoration-none"
+                href="/productos">Ver productos</a> <i class="fas fa-arrow-right"></i></button>
+    </form>
+</div>
+<%-include("partials/footer"); %>

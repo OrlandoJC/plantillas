@@ -1,0 +1,33 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Productos
+    link(rel='stylesheet' href='/css/index.css')
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.11.2/css/all.css')
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor' crossorigin='anonymous')
+.container
+    h1.text-light Productos
+    if products.length > 0
+        table.table.table-light.table-striped.align-top
+            thead
+            tr
+                th(scope='col') Nombre
+                th(scope='col') Precio
+                th(scope='col') Foto
+            tbody
+                each product in products
+                    tr
+                        td=product.name
+                        td=product.price
+                        td
+                            img(src=product.pictureUrl alt='' width='40')
+    else
+        .alert.alert-danger(role='alert')
+            | No hay productos &#x1F625;!
+
+    button.btn.btn-outline-primary(type='button')
+        i.fas.fa-arrow-left
+        a.text-white.text-decoration-none(href='/') A&ntilde;adir producto
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js' integrity='sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2' crossorigin='anonymous')
